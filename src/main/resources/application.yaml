@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: PipeArch
+  datasource:
+    url: jdbc:postgresql://localhost:5432/PipeArch
+    username: postgres
+    password: test
