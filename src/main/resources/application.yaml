@@ -5,3 +5,7 @@ spring:
     url: jdbc:postgresql://localhost:5432/PipeArch
     username: postgres
     password: test
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
