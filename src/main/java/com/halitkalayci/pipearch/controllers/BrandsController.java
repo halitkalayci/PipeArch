@@ -1,8 +1,10 @@
 package com.halitkalayci.pipearch.controllers;
 
+import an.awesome.pipelinr.Pipeline;
 import an.awesome.pipelinr.Pipelinr;
 import com.halitkalayci.pipearch.application.features.brands.commands.create.CreateBrandCommand;
 import com.halitkalayci.pipearch.application.features.brands.commands.create.CreatedBrandResponse;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,10 +21,13 @@ import org.springframework.web.servlet.function.EntityResponse;
  */
 @RestController
 @RequestMapping("/api/v1/brands")
+@RequiredArgsConstructor
 public class BrandsController {
+  private final Pipeline pipeline;
+
   @PostMapping
   public ResponseEntity<CreatedBrandResponse> createBrand(@RequestBody CreateBrandCommand command) {
-    CreatedBrandResponse response = new Pipelinr().send(command);
+    CreatedBrandResponse response = command.execute(pipeline);
     return ResponseEntity.ok().body(response);
   }
 }

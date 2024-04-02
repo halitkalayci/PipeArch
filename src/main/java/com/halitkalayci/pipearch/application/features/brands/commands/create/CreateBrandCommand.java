@@ -2,13 +2,18 @@ package com.halitkalayci.pipearch.application.features.brands.commands.create;
 
 import an.awesome.pipelinr.Command;
 import com.halitkalayci.pipearch.repositories.BrandRepository;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
+import org.springframework.stereotype.Component;
 
 /***
  * <p>Represents a command in a CQRS and pipeline-based system, encapsulating all the
  * necessary information for an action to be performed <b>(Create Brand)</b>,
  * typically resulting in a state change within the system.</p>
  */
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class CreateBrandCommand implements Command<CreatedBrandResponse> {
   private String name;
 
@@ -19,13 +24,14 @@ public class CreateBrandCommand implements Command<CreatedBrandResponse> {
    * and adhering to the principles of CQRS and pipeline architecture.</p>
    */
   @RequiredArgsConstructor
+  @Component
   public static class CreateBrandCommandHandler
           implements Command.Handler<CreateBrandCommand, CreatedBrandResponse> {
     private final BrandRepository brandRepository;
 
     @Override
     public CreatedBrandResponse handle(CreateBrandCommand createBrandCommand) {
-      return null;
+      return new CreatedBrandResponse(1L, createBrandCommand.getName());
     }
   }
 }
