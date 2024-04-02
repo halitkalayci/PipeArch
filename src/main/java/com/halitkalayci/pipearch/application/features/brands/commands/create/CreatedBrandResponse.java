@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-/***
+/**
  * <p>Defines a Data Transfer Object (DTO) class used to encapsulate data attributes
  * and transfer them between different
  * layers of the application, promoting loose coupling and encapsulation.</p>
