@@ -3,11 +3,14 @@ package com.halitkalayci.pipearch.application.features.brands.commands.create;
 import an.awesome.pipelinr.Command;
 import com.halitkalayci.pipearch.application.features.brands.mappers.BrandMapper;
 import com.halitkalayci.pipearch.core.application.pipelines.authentication.AuthenticatedRequest;
+import com.halitkalayci.pipearch.core.application.pipelines.authentication.AuthorizedRequest;
 import com.halitkalayci.pipearch.domain.Brand;
 import com.halitkalayci.pipearch.repositories.BrandRepository;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 /**
  * <p>Represents a command in a CQRS and pipeline-based system, encapsulating all the
@@ -18,9 +21,14 @@ import org.springframework.stereotype.Component;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class CreateBrandCommand implements Command<CreatedBrandResponse>, AuthenticatedRequest {
+public class CreateBrandCommand implements Command<CreatedBrandResponse>, AuthorizedRequest {
   @NotBlank
   private String name;
+
+  @Override
+  public List<String> getRequiredRoles() {
+    return List.of("Admin","Brand.Create","Brand.Write");
+  }
 
   /**
    * <p>Defines the handler responsible for processing the specific command <b>(Create Brand)</b>,

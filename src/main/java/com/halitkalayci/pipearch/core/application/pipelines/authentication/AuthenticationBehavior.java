@@ -2,9 +2,14 @@ package com.halitkalayci.pipearch.core.application.pipelines.authentication;
 
 import an.awesome.pipelinr.Command;
 import com.halitkalayci.pipearch.core.utils.exceptions.types.NotAuthenticatedException;
+import com.halitkalayci.pipearch.core.utils.exceptions.types.NotAuthorizedException;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
+
+import java.util.Collection;
+import java.util.List;
 
 /**
  * A middleware behavior that integrates with Spring Security. It checks if the user is
@@ -20,6 +25,21 @@ public class AuthenticationBehavior implements Command.Middleware {
       Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
       if (authentication == null || !authentication.isAuthenticated()) {
         throw new NotAuthenticatedException();
+      }
+
+      if(command instanceof AuthorizedRequest)
+      {
+        List<String> requiredRoles = ((AuthorizedRequest) command).getRequiredRoles();
+
+        boolean hasAnyMatch = authentication
+                .getAuthorities()
+                .stream()
+                .anyMatch(i->requiredRoles
+                        .stream()
+                        .anyMatch(x-> x.equalsIgnoreCase(i.getAuthority())));
+
+        if(!hasAnyMatch)
+          throw new NotAuthorizedException();
       }
     }
     return next.invoke();

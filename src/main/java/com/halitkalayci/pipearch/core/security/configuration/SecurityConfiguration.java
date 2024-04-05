@@ -1,7 +1,6 @@
 package com.halitkalayci.pipearch.core.security.configuration;
 
 import com.halitkalayci.pipearch.core.security.filters.JwtAuthFilter;
-import com.halitkalayci.pipearch.core.security.services.SecurityService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,7 +18,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @Configuration
 @RequiredArgsConstructor
 public class SecurityConfiguration {
-  private final SecurityService securityService;
+
   private final UserDetailsService userService;
   private final PasswordEncoder passwordEncoder;
   private final JwtAuthFilter jwtAuthFilter;
@@ -31,9 +30,6 @@ public class SecurityConfiguration {
             .anonymous(AbstractHttpConfigurer::disable)
             .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
             .authorizeHttpRequests(request -> request.anyRequest().permitAll());
-
-    if(securityService!=null)
-      http = securityService.configureCustomSecurity(http);
 
     return http.build();
   }
