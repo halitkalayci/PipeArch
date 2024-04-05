@@ -1,6 +1,6 @@
 package com.halitkalayci.pipearch.domain;
 
-import com.halitkalayci.pipearch.core.domain.BaseEntity;
+import com.halitkalayci.pipearch.core.domain.abstracts.BaseEntity;
 import jakarta.persistence.*;
 import java.util.HashSet;
 import java.util.Set;

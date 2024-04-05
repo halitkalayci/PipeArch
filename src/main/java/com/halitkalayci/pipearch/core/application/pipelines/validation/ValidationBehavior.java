@@ -1,4 +1,4 @@
-package com.halitkalayci.pipearch.core.application.pipelines;
+package com.halitkalayci.pipearch.core.application.pipelines.validation;
 
 import an.awesome.pipelinr.Command;
 import jakarta.validation.ConstraintViolation;

@@ -24,8 +24,7 @@ public class BrandsController {
   private final Pipeline pipeline;
 
   @PostMapping
-  public ResponseEntity<CreatedBrandResponse> createBrand(@RequestBody CreateBrandCommand command) {
-    CreatedBrandResponse response = command.execute(pipeline);
-    return ResponseEntity.ok().body(response);
+  public ResponseEntity<?> createBrand(@RequestBody CreateBrandCommand command) {
+    return ResponseEntity.ok().body(command.execute(pipeline));
   }
 }

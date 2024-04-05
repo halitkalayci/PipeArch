@@ -1,4 +1,4 @@
-package com.halitkalayci.pipearch.core.domain;
+package com.halitkalayci.pipearch.core.domain.abstracts;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;

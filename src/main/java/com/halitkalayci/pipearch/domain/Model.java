@@ -1,6 +1,6 @@
 package com.halitkalayci.pipearch.domain;
 
-import com.halitkalayci.pipearch.core.domain.BaseEntity;
+import com.halitkalayci.pipearch.core.domain.abstracts.BaseEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
