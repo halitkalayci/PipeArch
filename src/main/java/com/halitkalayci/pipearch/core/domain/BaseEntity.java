@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 import lombok.Getter;
 import lombok.Setter;
 
-/***
+/**
  * <p>Base type for overall entities.</p>
  *
  * @param <T> is the generic primary key type for entity

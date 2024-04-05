@@ -7,7 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-/***
+/**
  * <p>Represents the entity model for <b>`models`</b> table in the database,
  * mapping its columns to class fields with JPA annotations.</p>
  */

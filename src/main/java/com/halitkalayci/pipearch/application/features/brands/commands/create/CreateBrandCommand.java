@@ -4,6 +4,8 @@ import an.awesome.pipelinr.Command;
 import com.halitkalayci.pipearch.application.features.brands.mappers.BrandMapper;
 import com.halitkalayci.pipearch.domain.Brand;
 import com.halitkalayci.pipearch.repositories.BrandRepository;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 import org.springframework.stereotype.Component;
 
@@ -17,6 +19,7 @@ import org.springframework.stereotype.Component;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CreateBrandCommand implements Command<CreatedBrandResponse> {
+  @NotBlank
   private String name;
 
   /**
@@ -35,8 +38,7 @@ public class CreateBrandCommand implements Command<CreatedBrandResponse> {
     public CreatedBrandResponse handle(CreateBrandCommand createBrandCommand) {
       Brand brand = BrandMapper.INSTANCE.brandFromCreateBrandCommand(createBrandCommand);
       brand = brandRepository.save(brand);
-      CreatedBrandResponse response = BrandMapper.INSTANCE.createdBrandResponseFromBrand(brand);
-      return response;
+      return BrandMapper.INSTANCE.createdBrandResponseFromBrand(brand);
     }
   }
 }

@@ -9,7 +9,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-/***
+/**
  * <p>Defines the main application class that launches
  * the Spring Boot application using @SpringBootApplication annotation.</p>
  */
