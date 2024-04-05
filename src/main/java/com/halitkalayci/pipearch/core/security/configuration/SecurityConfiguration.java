@@ -29,7 +29,8 @@ public class SecurityConfiguration {
             .csrf(AbstractHttpConfigurer::disable)
             .httpBasic(AbstractHttpConfigurer::disable)
             .anonymous(AbstractHttpConfigurer::disable)
-            .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
+            .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
+            .authorizeHttpRequests(request -> request.anyRequest().permitAll());
 
     if(securityService!=null)
       http = securityService.configureCustomSecurity(http);
