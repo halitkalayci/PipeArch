@@ -1,0 +1,43 @@
+2024-04-06 04:09:58 - HV000001: Hibernate Validator 8.0.1.Final
+2024-04-06 04:09:58 - Starting PipeArchApplication using Java 22 with PID 18356 (C:\Users\klyyc\Desktop\Projects\Java\PipeArch\target\classes started by klyyc in C:\Users\klyyc\Desktop\Projects\Java\PipeArch)
+2024-04-06 04:09:58 - No active profile set, falling back to 1 default profile: "default"
+2024-04-06 04:09:58 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-04-06 04:09:58 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-04-06 04:09:58 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-06 04:09:58 - Finished Spring Data repository scanning in 45 ms. Found 3 JPA repository interfaces.
+2024-04-06 04:09:59 - Tomcat initialized with port 8080 (http)
+2024-04-06 04:09:59 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-04-06 04:09:59 - Starting service [Tomcat]
+2024-04-06 04:09:59 - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-06 04:09:59 - Initializing Spring embedded WebApplicationContext
+2024-04-06 04:09:59 - Root WebApplicationContext: initialization completed in 1265 ms
+2024-04-06 04:09:59 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-06 04:09:59 - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-04-06 04:09:59 - HHH000026: Second-level cache disabled
+2024-04-06 04:09:59 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-06 04:09:59 - HikariPool-1 - Starting...
+2024-04-06 04:09:59 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@24953ca3
+2024-04-06 04:09:59 - HikariPool-1 - Start completed.
+2024-04-06 04:10:00 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-06 04:10:00 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-06 04:10:01 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-06 04:10:01 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@31d00d0f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@59ab4d77, org.springframework.security.web.context.SecurityContextHolderFilter@a9a2028, org.springframework.security.web.header.HeaderWriterFilter@7798b52d, org.springframework.web.filter.CorsFilter@446f1a70, org.springframework.security.web.authentication.logout.LogoutFilter@4294be52, com.halitkalayci.pipearch.core.security.filters.JwtAuthFilter@61cd213, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2dcebb1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@76db2c3e, org.springframework.security.web.access.ExceptionTranslationFilter@56bb45f3, org.springframework.security.web.access.intercept.AuthorizationFilter@13ff6d97]
+2024-04-06 04:10:02 - LiveReload server is running on port 35729
+2024-04-06 04:10:02 - Starting ProtocolHandler ["http-nio-8080"]
+2024-04-06 04:10:02 - Tomcat started on port 8080 (http) with context path ''
+2024-04-06 04:10:02 - Started PipeArchApplication in 4.611 seconds (process running for 5.197)
+2024-04-06 04:10:21 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-06 04:10:21 - Initializing Servlet 'dispatcherServlet'
+2024-04-06 04:10:21 - Completed initialization in 1 ms
+2024-04-06 04:10:22 - Processing command: com.halitkalayci.pipearch.application.features.brands.commands.create.CreateBrandCommand with parameters: CreateBrandCommand(name=a)
+2024-04-06 04:10:22 - Error processing command: com.halitkalayci.pipearch.application.features.brands.commands.create.CreateBrandCommand with error: null with parameters: CreateBrandCommand(name=a)
+2024-04-06 04:10:22 - Resolved [com.halitkalayci.pipearch.core.utils.exceptions.types.ValidationException]
+2024-04-06 04:10:52 - Processing command: com.halitkalayci.pipearch.application.features.brands.commands.create.CreateBrandCommand with parameters: CreateBrandCommand(name=a)
+2024-04-06 04:10:52 - Error processing command: com.halitkalayci.pipearch.application.features.brands.commands.create.CreateBrandCommand with error: null with parameters: CreateBrandCommand(name=a)
+2024-04-06 04:10:52 - Resolved [com.halitkalayci.pipearch.core.utils.exceptions.types.ValidationException]
+2024-04-06 04:10:57 - Processing command: com.halitkalayci.pipearch.application.features.brands.commands.create.CreateBrandCommand with parameters: CreateBrandCommand(name=a)
+2024-04-06 04:10:57 - Error processing command: com.halitkalayci.pipearch.application.features.brands.commands.create.CreateBrandCommand with error: null with parameters: CreateBrandCommand(name=a)
+2024-04-06 04:10:57 - Resolved [com.halitkalayci.pipearch.core.utils.exceptions.types.ValidationException]
+2024-04-06 04:12:07 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-06 04:12:07 - HikariPool-1 - Shutdown initiated...
+2024-04-06 04:12:07 - HikariPool-1 - Shutdown completed.

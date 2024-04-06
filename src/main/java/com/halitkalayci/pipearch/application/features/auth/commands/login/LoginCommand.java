@@ -16,6 +16,7 @@ import org.springframework.stereotype.Component;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString(exclude = {"password"})
 public class LoginCommand implements Command<AccessToken> {
   @Email
   @NotBlank
