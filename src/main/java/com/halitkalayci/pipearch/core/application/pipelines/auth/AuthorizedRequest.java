@@ -1,4 +1,4 @@
-package com.halitkalayci.pipearch.core.application.pipelines.authentication;
+package com.halitkalayci.pipearch.core.application.pipelines.auth;
 
 import java.util.List;
 

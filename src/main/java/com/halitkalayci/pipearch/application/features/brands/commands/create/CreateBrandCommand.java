@@ -2,11 +2,11 @@ package com.halitkalayci.pipearch.application.features.brands.commands.create;
 
 import an.awesome.pipelinr.Command;
 import com.halitkalayci.pipearch.application.features.brands.mappers.BrandMapper;
-import com.halitkalayci.pipearch.core.application.pipelines.authentication.AuthenticatedRequest;
-import com.halitkalayci.pipearch.core.application.pipelines.authentication.AuthorizedRequest;
+import com.halitkalayci.pipearch.core.application.pipelines.auth.AuthorizedRequest;
 import com.halitkalayci.pipearch.domain.Brand;
 import com.halitkalayci.pipearch.repositories.BrandRepository;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.*;
 import org.springframework.stereotype.Component;
 
@@ -23,6 +23,7 @@ import java.util.List;
 @NoArgsConstructor
 public class CreateBrandCommand implements Command<CreatedBrandResponse>, AuthorizedRequest {
   @NotBlank
+  @Size(min=3)
   private String name;
 
   @Override

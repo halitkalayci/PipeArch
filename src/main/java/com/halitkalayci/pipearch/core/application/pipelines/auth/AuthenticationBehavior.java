@@ -1,14 +1,12 @@
-package com.halitkalayci.pipearch.core.application.pipelines.authentication;
+package com.halitkalayci.pipearch.core.application.pipelines.auth;
 
 import an.awesome.pipelinr.Command;
 import com.halitkalayci.pipearch.core.utils.exceptions.types.NotAuthenticatedException;
 import com.halitkalayci.pipearch.core.utils.exceptions.types.NotAuthorizedException;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 
-import java.util.Collection;
 import java.util.List;
 
 /**

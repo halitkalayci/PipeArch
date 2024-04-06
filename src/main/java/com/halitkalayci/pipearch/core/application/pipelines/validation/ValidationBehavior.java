@@ -1,8 +1,11 @@
 package com.halitkalayci.pipearch.core.application.pipelines.validation;
 
 import an.awesome.pipelinr.Command;
+import com.halitkalayci.pipearch.core.utils.exceptions.types.ValidationException;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validator;
+
+import java.util.List;
 import java.util.Set;
 import org.springframework.stereotype.Component;
 
@@ -33,8 +36,11 @@ public class ValidationBehavior implements Command.Middleware {
     Set<ConstraintViolation<C>> errors = validator.validate(command);
 
     if (!errors.isEmpty()) {
-      // TODO: Refactor with custom global exception type.
-      throw new RuntimeException("Doğrulama hataları: " + errors.toString());
+      List<ValidationError> errorList = errors
+              .stream()
+              .map(e -> new ValidationError(e.getPropertyPath().toString(), e.getMessage()))
+              .toList();
+      throw new ValidationException(errorList);
     }
 
     return next.invoke();
